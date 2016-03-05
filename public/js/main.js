@@ -15,13 +15,6 @@ function taskControl() {
   $("tbody").on("click", ".done", toggleCompleted);
 }
 
-function updateTasks() {
-  $.get('./tasks', function(data) {
-    var $tasks = createTasks(data);
-    $('#tasks').append($tasks);
-  })
-}
-
 function createTasks(data) {
   console.log('hey');
   return data.map(function(task) {
@@ -52,12 +45,10 @@ function addTask(e) {
   $("#newTask").trigger("reset");
 }
 
-function deleteTask() {
-  var $tr = $(this).closest('tr');
-  var remove = $tr.index() - 1;
-  $.post('./task/delete', { "index": remove})
-    .success(function(data){
-    $tr.remove();
+function updateTasks() {
+  $.get('./tasks', function(data) {
+    var $tasks = createTasks(data);
+    $('#tasks').append($tasks);
   })
 }
 
@@ -67,5 +58,14 @@ function toggleCompleted() {
   $.post('./change/status', { "index": indexToChange})
     .success(function(data){
     $tr.addClass("strike");
+  })
+}
+
+function deleteTask() {
+  var $tr = $(this).closest('tr');
+  var remove = $tr.index() - 1;
+  $.post('./task/delete', { "index": remove})
+    .success(function(data){
+    $tr.remove();
   })
 }

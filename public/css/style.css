@@ -1,0 +1,59 @@
+body {
+  background-image: url(/img/desk.jpeg);
+  background-size: cover;
+  background-position: top right;
+  background-position-x: 100%
+  background-position-y: 0%;
+  background-repeat: no-repeat;
+
+  font-family: 'Special Elite';
+  font-size: 18px;
+  color: navy;
+}
+/*body {
+  background-color: #ccffe6;
+}*/
+
+h1 {
+  margin-top: 15px;
+  font-family: 'Special Elite';
+  font-size: 45px;
+  margin-bottom: 4%;
+  text-align: center;
+}
+
+.done {
+  text-align: center;
+}
+
+table {
+  margin-top: 25px;
+}
+
+th {
+  font-size: 18px;
+  color: #3366cc;
+}
+
+#listHeader, th {
+  margin-top: 5%;
+  border-bottom: 2px solid black;
+}
+
+#itemList {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#template {
+  display: none;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: red;
+}
+
+.glyphicon-pushpin {
+  text-align: center;
+}

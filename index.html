@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Just Did It! <small> ...your personal task master</small></h1>
+      <div class="row">
+        <h2>Enter a new task<h2>
+      </div>
+      <div class="row" id="taskInput">
+        <form id="newTask">
+          <label>New Task</label>
+          <input type="text" size="55" id="task" required>
+          <br><br>
+          <label>Due date</label>
+          <input type="date" id="date" >
+          <button class="btn btn-primary" type="submit" value="Submit" id="submit">Submit</button><br><br>
+        </form>
+      </div>
+    </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-xs-6">Task Name</th>
+        <th class="col-xs-2">Date Due</th>
+        <th class="col-xs-2">Task Completed?</th>
+        <th class="col-xs-2">Delete Task</th>
+      </tr>
+    </thead>
+      <tbody id="tasks">
+        <tr id="template">
+          <td class="taskName"></td>
+          <td class="dueDate"></td>
+
+          <td class="completed">
+            <button class='done' type="button" class="btn btn-info" id="fav">
+              <span class="glyphicon glyphicon-pushpin"></span>
+            </button>
+          </td>
+          <td class="delete">
+            <button  type="button" class="btn-sm trashButton">
+              <span class="glyphicon glyphicon-trash"</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

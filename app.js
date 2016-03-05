@@ -79,12 +79,12 @@ app.post('/delete/completed', function(req, res){
   fs.readFile('./tasks.json', function(err, data){
     if (err) return res.status(400).send(err);
     var tasks = JSON.parse(data);
-    var indices = req.body.indices;
-    var numRemoved = 0;
-    for (var i = 0; i < indices.length; i++){
-      var index = indices[i] - numRemoved;
+    var number = req.body.number;
+    var taskDeleted = 0;
+    for (var i = 0; i < number.length; i++){
+      var index = number[i] - taskDeleted;
       tasks.splice(index, 1);
-      numRemoved++;
+      taskDeleted++;
     }
     fs.writeFile('./tasks.json', JSON.stringify(tasks), function(err){
       if (err) throw err;

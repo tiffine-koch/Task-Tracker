@@ -38,24 +38,24 @@ function createTasks(data) {
 
 function addTask(e) {
   e.preventDefault();
-  var taskText = $('#task').val();
+  var description = $('#task').val();
   var dueDate = moment($('#date').val()).format('MM-DD-YYYY');
   if (dueDate ==="Invalid date"){
     dueDate = " ";
   }
-  var newTaskObj = {name: taskText, date: dueDate, complete: "false"};
-  $.post('./task/add', newTaskObj)
+  var newObj = {name: description, date: dueDate, complete: "false"};
+  $.post('./task/add', newObj)
     .success(function(data){
-      var $newTask = createTasks([newTaskObj]);
-      $('#tasks').append($newTask);
+      var $new = createTasks([newObj]);
+      $('#tasks').append($new);
   })
   $("#newTask").trigger("reset");
 }
 
 function deleteTask() {
   var $tr = $(this).closest('tr');
-  var indexToRemove = $tr.index() - 1;
-  $.post('./task/delete', { "index": indexToRemove})
+  var remove = $tr.index() - 1;
+  $.post('./task/delete', { "index": remove})
     .success(function(data){
     $tr.remove();
   })
